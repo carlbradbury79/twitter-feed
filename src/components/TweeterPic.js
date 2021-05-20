@@ -1,15 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const TweeterPicStyle = styled.img`
+  border-radius: 20px;
+`;
 
 const TweeterPic = ({ tweet }) => {
   console.log(tweet.retweeted);
   return tweet.retweeted ? (
-    <div>
-      <img src={tweet.retweeted_status.user.profile_image_url} />
-    </div>
+    <TweeterPicStyle src={tweet.retweeted_status.user.profile_image_url} />
   ) : (
-    <div>
-      <img src={tweet.user.profile_image_url} />
-    </div>
+    <TweeterPicStyle src={tweet.user.profile_image_url} />
   );
 };
 

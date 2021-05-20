@@ -17,13 +17,13 @@ const TweetContainerStyle = styled.main`
 `;
 
 const TweetStyle = styled.div`
-  background-color: #fff;
   flex: 1;
-  padding: 20px;
-  border: 1px solid #444;
-  border-radius: 20px;
+  padding: 0 12px;
+  border: 1px solid var(--grey);
   width: 600px;
   margin-bottom: 20px;
+  display: grid;
+  grid-template: auto 1fr / auto 1fr;
 `;
 
 export default function Twitter() {
@@ -47,8 +47,10 @@ export default function Twitter() {
         return (
           <TweetStyle key={tweet.id_str}>
             <TweeterPic tweet={tweet} />
-            <TweetText text={text} tweetId={tweet.id_str} />
-            <Media media={media} alt={text} />
+            <div>
+              <TweetText text={text} tweetId={tweet.id_str} />
+              <Media media={media} alt={text} />
+            </div>
             <Meta
               likes={tweet.retweeted_status.favorite_count}
               retweets={tweet.retweet_count}

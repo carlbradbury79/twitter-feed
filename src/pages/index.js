@@ -1,11 +1,13 @@
 import * as React from 'react';
 import Twitter from '../components/Twitter';
 import { IoIosHeart, IoIosRepeat, IoLogoTwitter } from 'react-icons/io';
+import { GlobalStyle } from '../styles/GlobalStyle';
 
 // markup
 const IndexPage = () => {
   return (
     <main>
+      <GlobalStyle />
       <title>Home Page</title>
       <h1>
         <span className='highlight'>

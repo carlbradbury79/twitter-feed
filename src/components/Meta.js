@@ -1,11 +1,16 @@
 import React from 'react';
 import { IoIosHeart, IoIosRepeat, IoLogoTwitter } from 'react-icons/io';
+import styled from 'styled-components';
+
+const MetaStyles = styled.div`
+  grid-column: 1 / 4;
+`;
 
 // Tweet Meta data - like and tweet counts
 const Meta = ({ likes, retweets }) => {
   console.log({ likes, retweets });
   return (
-    <div>
+    <MetaStyles>
       <span title={`${retweets} Retweets`}>
         <IoIosRepeat />
         {retweets}
@@ -15,7 +20,7 @@ const Meta = ({ likes, retweets }) => {
         <IoIosHeart className='heart' />
         {likes}
       </span>
-    </div>
+    </MetaStyles>
   );
 };
 
